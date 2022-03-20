@@ -4,5 +4,6 @@
         <page name='Basic'/>
         <page name='Tour'/>
         <page name='Initialization'/>
+        <page name='Deinitialization'/>
     </pages>
 </playground>
