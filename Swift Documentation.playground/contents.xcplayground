@@ -5,5 +5,6 @@
         <page name='Tour'/>
         <page name='Initialization'/>
         <page name='Deinitialization'/>
+        <page name='Optional Chaining'/>
     </pages>
 </playground>
