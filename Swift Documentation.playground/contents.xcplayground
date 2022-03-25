@@ -18,5 +18,6 @@
         <page name='Type Casting'/>
         <page name='Nested Types'/>
         <page name='Protocols'/>
+        <page name='Generics'/>
     </pages>
 </playground>
