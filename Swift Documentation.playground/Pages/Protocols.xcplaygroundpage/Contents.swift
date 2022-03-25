@@ -287,4 +287,137 @@ let seattle = City(name: "Seattle", latitude: 47.6, longitude: -122.3)
 beginConcert(in: seattle)
 // 打印 "Hello, Seattle!"
 
+protocol HasArea {
+    var area: Double { get }
+}
+
+class Circle: HasArea {
+    let pi = 3.1415927
+    var radius: Double
+    var area: Double { return pi * radius * radius }
+    init(radius: Double) { self.radius = radius }
+}
+class Country: HasArea {
+    var area: Double
+    init(area: Double) { self.area = area }
+}
+class Animal {
+    var legs: Int
+    init(legs: Int) { self.legs = legs }
+}
+
+let objects: [AnyObject] = [
+    Circle(radius: 2.0),
+    Country(area: 243_610),
+    Animal(legs: 4)
+]
+
+for object in objects {
+    if let objectWithArea = object as? HasArea {
+        print("Area is \(objectWithArea.area)")
+    } else {
+        print("Something that doesn't have an area")
+    }
+}
+// Area is 12.5663708
+// Area is 243610.0
+// Something that doesn't have an area
+
+
+@objc protocol CounterDataSource {
+    @objc optional func increment(forCount count: Int) -> Int
+    @objc optional var fixedIncrement: Int { get }
+}
+
+class Counter {
+    var count = 0
+    var dataSource: CounterDataSource?
+    func increment() {
+        if let amount = dataSource?.increment?(forCount: count) {
+            count += amount
+        } else if let amount = dataSource?.fixedIncrement {
+            count += amount
+        }
+    }
+}
+
+class ThreeSource: NSObject, CounterDataSource {
+    let fixedIncrement = 3
+}
+
+var counter = Counter()
+counter.dataSource = ThreeSource()
+for _ in 1...4 {
+    counter.increment()
+    print(counter.count)
+}
+// 3
+// 6
+// 9
+// 12
+
+class TowardsZeroSource: NSObject, CounterDataSource {
+    func increment(forCount count: Int) -> Int {
+        if count == 0 {
+            return 0
+        } else if count < 0 {
+            return 1
+        } else {
+            return -1
+        }
+    }
+}
+
+counter.count = -4
+counter.dataSource = TowardsZeroSource()
+for _ in 1...5 {
+    counter.increment()
+    print(counter.count)
+}
+// -3
+// -2
+// -1
+// 0
+// 0
+
+
+extension RandomNumberGenerator {
+    func randomBool() -> Bool {
+        return random() > 0.5
+    }
+}
+
+let generator2 = LinearCongruentialGenerator()
+print("Here's a random number: \(generator2.random())")
+// 打印 “Here's a random number: 0.37464991998171”
+print("And here's a random Boolean: \(generator2.randomBool())")
+// 打印 “And here's a random Boolean: true”
+
+
+extension PrettyTextRepresentable  {
+    var prettyTextualDescription: String {
+        return textualDescription
+    }
+}
+
+
+extension Collection where Element: Equatable {
+    func allEqual() -> Bool {
+        for element in self {
+            if element != self.first {
+                return false
+            }
+        }
+        return true
+    }
+}
+
+let equalNumbers = [100, 100, 100, 100, 100]
+let differentNumbers = [100, 100, 200, 100, 200]
+
+print(equalNumbers.allEqual())
+// 打印 "true"
+print(differentNumbers.allEqual())
+// 打印 "false"
+
 //: [Next](@next)
