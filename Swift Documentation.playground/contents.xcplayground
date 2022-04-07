@@ -22,5 +22,6 @@
         <page name='Opaque Types'/>
         <page name='Automatic Reference Counting'/>
         <page name='Memory Safety'/>
+        <page name='Access Control'/>
     </pages>
 </playground>
