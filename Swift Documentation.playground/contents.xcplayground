@@ -23,5 +23,6 @@
         <page name='Automatic Reference Counting'/>
         <page name='Memory Safety'/>
         <page name='Access Control'/>
+        <page name='Advanced Operators'/>
     </pages>
 </playground>
