@@ -63,6 +63,7 @@ let descriptionString = "The value of aDouble is \(aDouble)"
 let equation = "Six by nine is \(6 * 9), not 42!"
 // To avoid escaping double quotes and backslashes, change the string delimiter
 let explanationString = #"The string I used was "The value of aDouble is \(aDouble)" and the result was \#(descriptionString)"#
+// 可以使用多个 # 来避免转义字符，但是 # 要配对，开始使用了几个 #，结尾就要用几个，中间不想被避免转义的地方也要用相同个数的 #
 // You can put as many number signs as you want before the opening quote,
 //   just match them at the ending quote. They also change the escape character
 //   to a backslash followed by the same number of number signs.
@@ -147,6 +148,8 @@ let `class` = "keyword"
 
  Optional<T> is an enum, with the cases .none (nil) and .some(T) (the value)
  */
+
+// 可选项是一个枚举类型，成员有 .none 和 .some
 
 var someOptionalString: String? = "optional" // Can be nil
 // T? is shorthand for Optional<T> — ? is a postfix operator (syntax candy)
