@@ -10,6 +10,8 @@
 		596B7C32280FFCE000CD3FAA /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 596B7C31280FFCE000CD3FAA /* Collections */; };
 		596B7C34280FFF5A00CD3FAA /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596B7C33280FFF5A00CD3FAA /* Stack.swift */; };
 		59DF1BD5280FF9B5005A8003 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF1BD4280FF9B5005A8003 /* main.swift */; };
+		59EA5075281A820D005E2B15 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EA5074281A820D005E2B15 /* LinkedList.swift */; };
+		59EA5077281A8222005E2B15 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EA5076281A8222005E2B15 /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,8 @@
 		59DF1BD1280FF9B5005A8003 /* Data Structures & Alogrithms in Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Data Structures & Alogrithms in Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DF1BD4280FF9B5005A8003 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		59DF1BEF280FFC16005A8003 /* swift-collections */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swift-collections"; path = "../../swift-collections"; sourceTree = "<group>"; };
+		59EA5074281A820D005E2B15 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		59EA5076281A8222005E2B15 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				59DF1BD4280FF9B5005A8003 /* main.swift */,
 				596B7C33280FFF5A00CD3FAA /* Stack.swift */,
+				59EA5076281A8222005E2B15 /* Node.swift */,
+				59EA5074281A820D005E2B15 /* LinkedList.swift */,
 			);
 			path = "Data Structures & Alogrithms in Swift";
 			sourceTree = "<group>";
@@ -146,8 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EA5075281A820D005E2B15 /* LinkedList.swift in Sources */,
 				596B7C34280FFF5A00CD3FAA /* Stack.swift in Sources */,
 				59DF1BD5280FF9B5005A8003 /* main.swift in Sources */,
+				59EA5077281A8222005E2B15 /* Node.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
